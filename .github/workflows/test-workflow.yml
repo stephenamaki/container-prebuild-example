@@ -3,7 +3,7 @@ name: test-workflow
 
 on:
   push:
-    branches: [master]
+    branches: [main]
     paths:
       - .github/workflows/test-workflow.yml
   workflow_dispatch:
@@ -33,6 +33,6 @@ jobs:
           echo "My branch: ${{ github.ref_name }}"
           echo "My Github username: ${{ github.actor }}"
 
-      - name: echo secret <> change
+      - name: echo secret
         run: |
           echo "${{ secrets.TEST_SECRET }}"
